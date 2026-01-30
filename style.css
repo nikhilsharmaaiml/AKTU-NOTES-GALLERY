@@ -1,0 +1,206 @@
+/* ---------- RESET & BODY ---------- */
+* { margin:0; padding:0; box-sizing:border-box; font-family: 'Arial', sans-serif;}
+body {
+  min-height:100vh;
+  background:#111;
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  overflow-x:hidden;
+  transition: background 0.5s, color 0.5s;
+}
+
+/* ---------- FLOWER BACKGROUND ---------- */
+.flower-bg {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 800px;
+  color: skyblue;
+  opacity: 0.08;
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
+  animation: flowerGlow 3s ease-in-out infinite alternate;
+}
+@keyframes flowerGlow {
+  0% { opacity: 0.05; transform: scale(0.95) translate(-50%, -50%); }
+  50% { opacity: 0.15; transform: scale(1.05) translate(-50%, -50%); }
+  100% { opacity: 0.08; transform: scale(1) translate(-50%, -50%); }
+}
+
+/* ---------- LOGIN ---------- */
+.login { display:flex; align-items:center; justify-content:center; height:100vh; }
+.login-box {
+  background:rgb(15, 3, 0);
+  padding:70px 60px;
+  border-radius:25px;
+  text-align:center;
+  box-shadow: 0 0 30px rgba(8, 255, 255, 0.97);
+  animation: boxGlow 2s infinite alternate, floatBox 3s infinite ease-in-out;
+  position: relative;
+}
+@keyframes boxGlow { from { box-shadow: 0 0 20px rgb(236, 236, 19); } to { box-shadow: 0 0 50px rgb(248, 248, 24); } }
+@keyframes floatBox { 0% { transform: translateY(0); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0); } }
+
+.login-box input {
+  width:100%; padding:20px; margin:20px 0; border:none; border-radius:12px; font-size:20px;
+}
+.login-box button {
+  padding:20px 30px; font-size:20px; border:none; border-radius:12px; cursor:pointer;
+  background:#ff0; color:#000; font-weight:bold;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.login-box button:hover { 
+  transform: scale(1.05); 
+  box-shadow: 0 0 30px rgb(222, 222, 25), 0 0 50px rgb(230, 230, 28) inset;
+}
+
+/* ---------- HOME / SUBJECTS ---------- */
+header { text-align:center; margin:30px; font-size:22px; }
+header button { padding:15px 25px; font-size:18px; border:none; border-radius:12px; cursor:pointer; transition:0.3s; }
+header button:hover { transform: scale(1.05); }
+
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px; width:95%; margin:30px auto; }
+.card {
+  background:#800000;
+  padding:70px 40px;
+  border-radius:25px;
+  text-align:center;
+  font-size:26px;
+  cursor:pointer;
+  transition:0.3s;
+  box-shadow:0 0 30px #ff0;
+  animation: cardGlow 3s infinite alternate;
+}
+.card:hover { transform: scale(1.05); box-shadow:0 0 60px #ff0; }
+@keyframes cardGlow { 0% { box-shadow: 0 0 20px #ff0; } 50% { box-shadow: 0 0 40px #ff0; } 100% { box-shadow: 0 0 30px #ff0; } }
+
+/* ---------- BACK BUTTON ---------- */
+.back-btn {
+  display:inline-block;
+  padding:20px 30px;
+  margin:20px;
+  font-weight:bold;
+  font-size:20px;
+  border-radius:12px;
+  cursor:pointer;
+  background:#ff0;
+  color:#000;
+  transition:0.3s;
+}
+.back-btn:hover { transform: scale(1.03); }
+
+/* ---------- PYQ / TABLE ---------- */
+table { width:95%; margin:30px auto; border-collapse:collapse; font-size:20px; }
+th, td { border:3px solid #ff0; padding:20px; text-align:center; }
+th { background:#800000; color:#ff0; font-weight:bold; }
+td a { color:#ff0; font-weight:bold; text-decoration:none; font-size:18px; transition:0.3s; }
+td a:hover { text-decoration:underline; color:#fff; text-shadow: 0 0 10px #ff0, 0 0 20px #ff0; }
+
+/* ---------- HIDDEN CLASS ---------- */
+.hidden { display:none; }
+
+/* ---------- DARK MODE ---------- */
+body.dark { background:#111; color:#fff; }
+body.dark .login-box { background:rgba(0,0,0,0.95); box-shadow:0 0 30px #0ff; }
+body.dark .card { background:#550000; box-shadow:0 0 30px #0ff; }
+body.dark .back-btn { background:#0ff; color:#000; }
+body.dark th { background:#550000; color:#0ff; }
+body.dark td a { color:#0ff; }
+
+/* ---------- FINAL CUTE LOGIN FIX ---------- */
+.lamp-login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  min-height: 80vh;
+}
+
+/* Simple Lamp Section */
+.lamp-area {
+  text-align: center;
+  position: relative;
+}
+
+.lamp-head {
+  width: 120px;
+  height: 140px;
+  background: #7ca37c;
+  /* Simple Trapezoid Shape */
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+/* Face inside lamp */
+.lamp-head::before { content: "•‿•"; font-size: 35px; color: #000; font-weight: bold; }
+
+.lamp-stand {
+  width: 10px;
+  height: 100px;
+  background: #e0e0e0;
+  margin: -2px auto 0; /* Gap fix */
+}
+
+.lamp-base {
+  width: 80px;
+  height: 12px;
+  background: #ccc;
+  border-radius: 20px;
+  margin: -2px auto 0;
+}
+
+/* Login Box Exact Style */
+.login-box {
+  background: #1a1a1a;
+  padding: 40px;
+  border-radius: 20px;
+  width: 340px;
+  border: 1.5px solid #333;
+  box-shadow: 0 0 30px rgba(255, 255, 0, 0.2); /* Yellow Glow */
+}
+
+.login-box h2 {
+  color: #fff;
+  font-size: 28px;
+  margin-bottom: 25px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  background: #252525;
+  border: 1px solid #444;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.login-box button {
+  width: 100%;
+  background: #467a46;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:700px){
+  .lamp-login-container{ flex-direction:column; }
+  .card{padding:50px 20px; font-size:22px;}
+  table{font-size:18px;}
+  .login-box{padding:50px 30px;}
+}

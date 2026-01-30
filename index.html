@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AKTU Notes Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 🌸 Flower background -->
+  <div class="flower-bg">🌸</div>
+
+  <!-- 🔐 LOGIN -->
+  <section id="studentLogin" class="login">
+    <div class="lamp-login-container">
+
+      <!-- 🌟 LAMP -->
+      <div class="lamp-area">
+        <div class="cord"></div>
+        <div class="lamp">
+          <div class="lamp-head"></div>
+          <div class="lamp-stand"></div>
+          <div class="lamp-base"></div>
+        </div>
+      </div>
+
+      <!-- 🔐 LOGIN BOX -->
+      <div class="login-box">
+        <h2> STUDENTS LOGIN 📚</h2>
+        <input type="text" id="studentName" placeholder="Enter your name">
+        <button onclick="loginStudent()">Login</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 🏠 HOME -->
+  <section id="home" class="hidden">
+    <header>
+      <h2>Welcome, <span id="welcomeName"></span> 👋</h2>
+      <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
+    </header>
+    <div class="grid" id="homeGrid">
+      <div class="card" onclick="openType('pyq')">📄 PYQ</div>
+      <div class="card" onclick="openType('notes')">✍ Notes</div>
+      <div class="card" onclick="openType('quantum')">📕 Quantum</div>
+      <div class="card" onclick="openType('paid')">💰 Paid Courses</div>
+      <div class="card" onclick="openSyllabus()">📋 Syllabus</div>
+      <div class="card" onclick="openType('important')">⭐ Important Questions</div>
+    </div>
+  </section>
+
+  <!-- SUBJECTS / CONTENT -->
+  <section id="typeSection" class="hidden">
+    <div class="back-btn" onclick="goHome()">⬅ Back</div>
+    <h2 id="typeTitle"></h2>
+    <div class="grid" id="yearGrid"></div>
+  </section>
+
+  <section id="subjectSection" class="hidden">
+    <div class="back-btn" onclick="goType()">⬅ Back</div>
+    <h2 id="subjectTitle"></h2>
+    <div class="grid" id="subjectGrid"></div>
+  </section>
+
+  <section id="pyqTable" class="hidden">
+    <div class="back-btn" onclick="goSubjects()">⬅ Back</div>
+    <h2 id="pyqHeading"></h2>
+    <table>
+      <thead>
+        <tr><th>Year</th><th>Odd / File</th><th>Even / File</th></tr>
+      </thead>
+      <tbody id="pyqBody"></tbody>
+    </table>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
